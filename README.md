@@ -26,3 +26,5 @@ library(testthat)
 test_dir(test_path(), reporter="Summary")
 ```
 
+A line I wrote on my local computer
+A line I wrote on my local computer
