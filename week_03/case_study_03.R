@@ -20,7 +20,7 @@ gapminder_
 
 ggsave("task 3_1.png",width=15)
 
-##3 
+##3 group and summarize continent and year and save as grouping
 gapminder_continent=gapminder_ %>%
   group_by(continent,year) %>%
   summarize(gdpPercapweighted = weighted.mean(x = gdpPercap, w = pop),
