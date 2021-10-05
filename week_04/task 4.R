@@ -26,3 +26,14 @@ slice(1)%>% ##only keep the airport value which is furthest from the nyc airport
 str(farthest_airport)
 
 
+#####alternatives: or
+
+select(airports,
+       dest=faa,destName=name)%>%
+  right_join(fligts)%>%
+  arrange(desc(distance)) %>%
+  slice(1)%>%  ##slice after join
+  select(destName)%>%
+  as.character()
+
+

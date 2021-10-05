@@ -33,7 +33,7 @@ NewYork=us_states %>%
 border=st_intersection(x=Canada2,y=NewYork,crs=albers)
 
 ##plot the map
-ggplot(border)+
+finalmap=ggplot(border)+
   geom_sf(data=NewYork)+
 geom_sf(data=border,fill="red")+
   ggtitle("New York Land Within 10km")
