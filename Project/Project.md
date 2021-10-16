@@ -25,7 +25,8 @@ gentrification at the tract level in Buffalo, New York?
 
 ## Example 1
 
-![](https://data.buffalony.gov/Public-Safety/Crime-Incidents-Data-Lens-/vhp3-62vz)
+![Crime
+data](https://data.buffalony.gov/Public-Safety/Crime-Incidents-Data-Lens-/vhp3-62vz)
 With the crime data from 2009 to 2021, these several crime incidents
 maps on the buffalo government are interactive and accessible for people
 to have a basic understanding of the crime incidents in the areas they
@@ -35,7 +36,8 @@ crime data in my own project.
 
 ## Example 2
 
-![](https://www.theguardian.com/cities/2016/sep/30/worlds-most-gentrified-cities-crime-stats-coffee-shops)
+![Gentrification and
+crime](https://i.guim.co.uk/img/media/879160b6cfafa7755c2f12300d2d08a95fd9f7d8/463_0_1643_986/master/1643.jpg?width=1020&quality=45&auto=format&fit=max&dpr=2&s=6d516152e0fe763b04bfb8f19f4ccf59)
 
 This map includes the different types of data that I am interested in —
 gentrification levels and crime data at the tract level. However, I
@@ -50,7 +52,8 @@ steps in geom\_sf (aes(fill=…)) and geom\_segment())
 
 ## Example 3
 
-![](https://bookdown.org/fis/social-life-of-neighborhoods/mapping-crime-data.html)
+![crime
+map](https://bookdown.org/fis/social-life-of-neighborhoods/images/crime_heat_map.gif)
 Alternatively, this kind of crime map can also be used in my project.
 Crime incidents can be represented as points in the map, and by creating
 the heat map, the incidents can be identified more easily. Multiple
