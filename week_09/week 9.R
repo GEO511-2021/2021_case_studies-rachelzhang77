@@ -1,11 +1,3 @@
----
-title: "Case Study 09"
-author: Your Name
-date: August 1, 2020
-output: github_document
----
- 
-```{r}
 rm(list = ls())
 library(sf)
 library(tidyverse)
@@ -54,4 +46,3 @@ storm_states <- st_join(x = storm_filter, y = states, join = st_intersects,left 
   slice(1:5)
 
 
-```
