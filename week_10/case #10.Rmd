@@ -1,14 +1,15 @@
-#' ---
-#' title: Satellite Remote Sensing
-#' subtitle: Analyze Satellite Data
-#' week: 10
-#' type: Case Study
-#' reading:
-#' tasks:
-#'    - Extract a timeseries from a single location in a netcdf file (part 1)
-#'    - Calculate a monthly climatology from a weekely timeseries (part 2)
-#'    - Summarize Land Surface Temperature by Land Cover (part 3)
-#' ---
+ ---
+ title: "Case Study 10"
+ author: Rachel Zhang
+ week: 10
+ tasks:
+    - Extract a timeseries from a single location in a netcdf file (part 1)
+    - Calculate a monthly climatology from a weekely timeseries (part 2)
+    - Summarize Land Surface Temperature by Land Cover (part 3)
+ output: github_document:
+   keep_md: true
+ 
+---
 #' 
 
 
@@ -123,7 +124,7 @@ gplot(lulc)+
                     labels=levels(lulc)[[1]]$landcover,
                     name="Landcover Type")+
   coord_equal()+
-  theme(legend.position = "bottom")+
+  theme(legend.position = "right")+
   guides(fill=guide_legend(ncol=5,nrow=3,byrow=TRUE))
 ```
  
