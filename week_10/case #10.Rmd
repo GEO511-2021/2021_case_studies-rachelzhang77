@@ -1,4 +1,4 @@
- ---
+---
  title: "Case Study 10"
  author: Rachel Zhang
  week: 10
@@ -6,8 +6,7 @@
     - Extract a timeseries from a single location in a netcdf file (part 1)
     - Calculate a monthly climatology from a weekely timeseries (part 2)
     - Summarize Land Surface Temperature by Land Cover (part 3)
- output: github_document:
-   keep_md: true
+ output: github_document
  
 ---
 #' 
@@ -125,7 +124,7 @@ gplot(lulc)+
                     name="Landcover Type")+
   coord_equal()+
   theme(legend.position = "right")+
-  guides(fill=guide_legend(ncol=5,nrow=3,byrow=TRUE))
+  guides(fill=guide_legend(ncol=1,byrow=TRUE))
 ```
  
 #' # Land Surface Temperature
@@ -192,7 +191,7 @@ location=raster::extract(lst,lw,buffer=1000,fun=mean,na.rm=T)
 location=t(location)
 #You may want to transpose them with `t()` to convert it from a wide matrix to long vector.
 ```
-```{r}
+```{r,message=FALSE,error=FALSE}
 #' 5. Extract the dates for each layer with 
 dates=getZ(lst)
 #combine them into a data.frame with the transposed raster values.  
