@@ -1,11 +1,9 @@
----
-title: "Case Study 11"
-author: Rachel Zhang
-date: November 16, 2021
-output: github_document
----
- 
-```{r,message=FALSE, warning = FALSE}
+Case Study 11
+================
+Rachel Zhang
+November 16, 2021
+
+``` r
 library(tidyverse)
 library(spData)
 library(sf)
@@ -21,10 +19,16 @@ registerDoParallel(4)
 getDoParWorkers() # check registered cores
 ```
 
-```{r,message=FALSE, warning = FALSE}
+    ## [1] 4
+
+``` r
 library(tidycensus)
 census_api_key ("7e9b9dfdae5d56fbf2a5c8e243c74bccbe74af98", install=TRUE,overwrite = TRUE)
+```
 
+    ## [1] "7e9b9dfdae5d56fbf2a5c8e243c74bccbe74af98"
+
+``` r
 racevars <- c(White = "P005003", 
               Black = "P005004", 
               Asian = "P005006", 
@@ -38,7 +42,7 @@ erie <- get_decennial(geography = "block", variables = racevars,
 erie_reduced=st_crop(erie,xmin=-78.9,xmax=-78.85,ymin=42.888,ymax=42.92)
 ```
 
-```{r,message=FALSE, warning = FALSE}
+``` r
 ###do one variable at a time
 race=foreach(r=unique(erie_reduced$variable),.combine='rbind') %dopar% {
   filter(erie_reduced,variable==r) %>% #do one race at each time
@@ -48,8 +52,9 @@ race=foreach(r=unique(erie_reduced$variable),.combine='rbind') %dopar% {
 }
 ```
 
-```{r,message=FALSE}
+``` r
 #draw the map
 mapview(race,zcol="variable",cex=0.1,alpha=0)
-
 ```
+
+![](case_study_11_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
