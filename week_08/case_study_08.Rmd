@@ -1,7 +1,50 @@
 ---
 title: "Case Study 08"
 author: Your Name
-date: August 1, 2020
-output: github_document
+date: Oct 26, 2021
+output: 
+  html_document: default
+  github_document: default
+  powerpoint_presentation: default
+  word_document: default
 ---
+ 
+```{r, results='hide',message=FALSE, echo=F}
+
+
+ library(rmarkdown)
+ library(tidyverse)
+library(kableExtra)
+ library(dplyr)
+ library(knitr)
+
+ dataurl="https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt"
+ CO2mean=read_table(dataurl,
+                  skip=56
+ )
+ 
+colnames(CO2mean)[1]="Year"
+colnames(CO2mean)[2]="mean"
+colnames(CO2mean)[3]="unc"
+colnames(CO2mean)[4]="na"
+ 
+ time=ggplot(CO2mean,aes(x=Year,y=mean))+
+ geom_point()+
+ geom_line()
+ 
+ ##top five year descending fornat
+ CO2mean_filtered=CO2mean %>% 
+ arrange(desc(CO2mean,"Year")) %>% 
+ filter(Year>"2015")
+knitr::kable(CO2mean_filtered)
+
+rmarkdown::render(file("week_08"), output_format = "all")
+CO2mean_filtered %>% 
+kable() %>% 
+as_image(width=10, file="CO2mean_filtered.png")
+ 
+
+```
+
+ 
  
